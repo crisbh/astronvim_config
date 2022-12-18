@@ -3,6 +3,7 @@ return {
   ensure_installed = {
     "pyright",
     "clangd",
+    "texlab",
     "sumneko_lua",
     "tsserver",
   },

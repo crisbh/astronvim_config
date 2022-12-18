@@ -4,8 +4,12 @@ return {
   ["onsails/lspkind.nvim"] = { disable = true },
 
   -- Added plugins:
+  -- NOT WORKING @TODO FIX!
   ["vimwiki/vimwiki"] = {},
-  ["lervag/vimtex"] = {},
+  ["lervag/vimtex"] = {
+    ft = "vimtex",
+    config = function() require "user.plugins.vimtex" end,
+  },
 --  ["nvim-lua/popup.nvim"] = {},
 
 --  ["nvim-treesitter/playground"] = {

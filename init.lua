@@ -6,25 +6,6 @@
 -- where a value with no key simply has an implicit numeric key
 local config = {
 
-  -- Configure AstroNvim updates
-  updater = {
-    remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "main", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
-    show_changelog = true, -- show the changelog after performing an update
-    auto_reload = false, -- automatically reload and sync packer after a successful update
-    auto_quit = false, -- automatically quit the current session after a successful update
-    -- remotes = { -- easily add new remotes to track
-    --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
-    --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
-    --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
-    -- },
-  },
-
   -- Set colorscheme to use
   colorscheme = "default_theme",
 
@@ -205,47 +186,6 @@ local config = {
       },
     },
   },
-
-  -- This function is run last and is a good place to configuring
-  -- augroups/autocommands and custom filetypes also this just pure lua so
-  -- anything that doesn't fit in the normal config locations above can go here
-  polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
-  end,
 }
-
------------------------------
---- Plugins configuration ---
------------------------------
-
---@TODO merge with astronvim. AstroNvim is a bit obscure on how to include these above...
-
----- vimwiki config
---vim.g.vimwiki_list = {{path = '~/Dropbox/vimwiki', syntax = 'markdown', ext = '.md'}}
---
----- Apply vimwiki syntax to regular md files
---vim.g.vimwiki_ext2syntax = {['.md'] = 'markdown', ['.markdown'] = 'markdown', ['.mdown'] = 'markdown'}
---
----- Disable vimwiki filetype for regular markdown files
---vim.g.vimwiki_global_ext = 0
---
---vim.g.vimtex_fold_enabled = true
---vim.g.tex_flavor='latex'
---vim.g.vimtex_view_method='zathura'
---vim.g.vimtex_quickfix_mode=0
---vim.g.tex_conceal='abdgms'
-
------------------------------
 
 return config
