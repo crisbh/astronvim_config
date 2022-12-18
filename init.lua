@@ -38,31 +38,6 @@ local config = {
     -- },
   },
 
-  -- set vim options here (vim.<first_key>.<second_key> = value)
-  options = {
-    opt = {
-      -- set to true or false etc.
-      relativenumber = true, -- sets vim.opt.relativenumber
-      number = true, -- sets vim.opt.number
-      spell = false, -- sets vim.opt.spell
-      signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-      wrap = false, -- sets vim.opt.wrap
-      textwidth = 80,       -- Split line after this size
-      wrapmargin= 2,
-      incsearch = true,     -- live incremental searching
-      autoread = true,      -- when a file has changed on disk, just load it. Don't ask
-    },
-    g = {
-      mapleader = ",", -- sets vim.g.mapleader
-      autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-      cmp_enabled = true, -- enable completion at start
-      autopairs_enabled = true, -- enable autopairs at start
-      diagnostics_enabled = true, -- enable diagnostics at start
-      status_diagnostics_enabled = true, -- enable diagnostics in statusline
-      icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-      ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-    },
-  },
   -- If you need more control, you can use the function()...end notation
   -- options = function(local_vim)
   --   local_vim.opt.relativenumber = true
@@ -138,63 +113,6 @@ local config = {
     underline = true,
   },
 
-  -- Extend LSP configuration
-  lsp = {
-    -- enable servers that you already have installed without mason
-    servers = {
-      -- "pyright"
-    },
-    formatting = {
-      -- control auto formatting on save
-      format_on_save = {
-        enabled = true, -- enable or disable format on save globally
-        allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
-        },
-        ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
-        },
-      },
-      disabled = { -- disable formatting capabilities for the listed language servers
-        -- "sumneko_lua",
-      },
-      timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
-    },
-    -- easily add or disable built in mappings added during LSP attaching
-    mappings = {
-      n = {
-        -- ["<leader>lf"] = false -- disable formatting keymap
-      },
-    },
-    -- add to the global LSP on_attach function
-    -- on_attach = function(client, bufnr)
-    -- end,
-
-    -- override the mason server-registration function
-    -- server_registration = function(server, opts)
-    --   require("lspconfig")[server].setup(opts)
-    -- end,
-
-    -- Add overrides for LSP server settings, the keys are the name of the server
-    ["server-settings"] = {
-      -- example for addings schemas to yamlls
-      -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
-      --   settings = {
-      --     yaml = {
-      --       schemas = {
-      --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-      --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-      --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-      --       },
-      --     },
-      --   },
-      -- },
-    },
-  },
-
   -- Mapping data with "desc" stored directly by vim.keymap.set().
   --
   -- Please use this mappings table to set keyboard mapping since this is the
@@ -220,60 +138,6 @@ local config = {
 
   -- Configure plugins
   plugins = {
-    init = {
-      -- You can disable default plugins as follows:
-      -- ["goolord/alpha-nvim"] = { disable = true },
-
-      -- You can also add new plugins here as well:
-      -- Add plugins, the packer syntax without the "use"
-      -- { "andweeb/presence.nvim" },
-      -- {
-      --   "ray-x/lsp_signature.nvim",
-      --   event = "BufRead",
-      --   config = function()
-      --     require("lsp_signature").setup()
-      --   end,
-      -- },
-      
-      -- We also support a key value style plugin definition similar to NvChad:
-      -- ["ray-x/lsp_signature.nvim"] = {
-      --   event = "BufRead",
-      --   config = function()
-      --     require("lsp_signature").setup()
-      --   end,
-      -- },
-
-      -- These configurations don't work. 
-      -- Instead, I unclude them at the bottom of the file ...
-      ["vimwiki/vimwiki"] = {
-        config = function()
-          require('vimwiki').setup({
-            vimwiki_list = {{
-              path = '~/Dropbox/vimwiki', 
-              syntax = 'markdown', 
-              ext = '.md',
-            }},
-          vimwiki_global_ext = 0,             -- Disable vimwiki filetype for regular markdown files
-          })
-        end,
-      },
-
-      ["lervag/vimtex"] = {
-        config = function()
-          require("vimtex").setup({
-            vimtex_fold_enabled = true,
-            tex_flavor='latex',
-            vimtex_view_method='zathura',
-            vimtex_quickfix_mode=0,
-            tex_conceal='abdgms',
-          })
-        end,
-      },
-        -- Popup API
-      ["nvim-lua/popup.nvim"] = {},
-
-
-    },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup function call
@@ -289,13 +153,6 @@ local config = {
       }
       return config -- return final config table
     end,
-    treesitter = { -- overrides `require("treesitter").setup(...)`
-      -- ensure_installed = { "lua" },
-    },
-    -- use mason-lspconfig to configure LSP installations
-    ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      -- ensure_installed = { "sumneko_lua" },
-    },
     -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
       -- ensure_installed = { "prettier", "stylua" },
@@ -374,20 +231,20 @@ local config = {
 
 --@TODO merge with astronvim. AstroNvim is a bit obscure on how to include these above...
 
--- vimwiki config
-vim.g.vimwiki_list = {{path = '~/Dropbox/vimwiki', syntax = 'markdown', ext = '.md'}}
-
--- Apply vimwiki syntax to regular md files
-vim.g.vimwiki_ext2syntax = {['.md'] = 'markdown', ['.markdown'] = 'markdown', ['.mdown'] = 'markdown'}
-
--- Disable vimwiki filetype for regular markdown files
-vim.g.vimwiki_global_ext = 0
-
-vim.g.vimtex_fold_enabled = true
-vim.g.tex_flavor='latex'
-vim.g.vimtex_view_method='zathura'
-vim.g.vimtex_quickfix_mode=0
-vim.g.tex_conceal='abdgms'
+---- vimwiki config
+--vim.g.vimwiki_list = {{path = '~/Dropbox/vimwiki', syntax = 'markdown', ext = '.md'}}
+--
+---- Apply vimwiki syntax to regular md files
+--vim.g.vimwiki_ext2syntax = {['.md'] = 'markdown', ['.markdown'] = 'markdown', ['.mdown'] = 'markdown'}
+--
+---- Disable vimwiki filetype for regular markdown files
+--vim.g.vimwiki_global_ext = 0
+--
+--vim.g.vimtex_fold_enabled = true
+--vim.g.tex_flavor='latex'
+--vim.g.vimtex_view_method='zathura'
+--vim.g.vimtex_quickfix_mode=0
+--vim.g.tex_conceal='abdgms'
 
 -----------------------------
 
