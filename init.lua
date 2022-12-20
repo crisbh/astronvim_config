@@ -8,6 +8,7 @@ local config = {
 
   -- Set colorscheme to use
   colorscheme = "default_theme",
+--  colorscheme = "catppuccin_mocha",
 
   -- Add highlight groups in any theme
   highlights = {

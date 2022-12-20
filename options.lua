@@ -1,23 +1,23 @@
 return {
   opt = {
+    termguicolors = true,
     completeopt = "menuone,noinsert,noselect",
     wildmode = "longest:full,full",
     wildignorecase = true,
+    spell = false,          -- sets vim.opt.spell
+    incsearch = true,       -- live incremental searching
+    autoread = true,        -- when a file has changed on disk, just load it. Don't ask
 
-    number = true, -- sets vim.opt.number
-    spell = false, -- sets vim.opt.spell
-
-    incsearch = true,     -- live incremental searching
-    autoread = true,      -- when a file has changed on disk, just load it. Don't ask
+    number = true,          -- sets vim.opt.number
+    relativenumber = true,  -- Override
+    linebreak = true,       -- Break at "natural" spot on wrap
+    textwidth = 80,         -- Split line after this size
+    wrapmargin= 2,
+    wrap = false,           -- Wrap lines
 
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     confirm = true, -- Confirm quit on errors
     cmdheight = 1, -- Override cmdheight=0
-    linebreak = true, -- Break at "natural" spot on wrap
-    relativenumber = true, -- Override
-    wrap = false, -- Wrap lines
-    textwidth = 80,       -- Split line after this size
-    wrapmargin= 2,
     whichwrap = "b,s,<,>,[,]", -- Motions that will wrap to prev/next line
   },
   g = {
