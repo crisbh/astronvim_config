@@ -1,6 +1,6 @@
 return {
   -- Disabled plugins:
-  ["goolord/alpha-nvim"] = { disable = true },
+  ["goolord/alpha-nvim"] = { disable = false },
   ["onsails/lspkind.nvim"] = { disable = true },
 
   -- Added plugins:
