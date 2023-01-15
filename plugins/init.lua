@@ -2,6 +2,8 @@ return {
   -- Disabled plugins:
   ["goolord/alpha-nvim"] = { disable = false },
   ["onsails/lspkind.nvim"] = { disable = true },
+  ["rafamadriz/friendly-snippets"] = { disable = false }, -- LuaSnips wants this
+  ["Darazaki/indent-o-matic"] = { disable = true },
 
   -- Added plugins:
   ["vimwiki/vimwiki"] = {},

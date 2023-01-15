@@ -123,6 +123,11 @@ local config = {
 
   -- LuaSnip Options
   luasnip = {
+    config = {
+      enable_autosnippets = true,
+      store_selection_keys = "<Tab>",
+    },
+
     -- Extend filetypes
     filetype_extend = {
       -- javascript = { "javascriptreact" },
@@ -132,6 +137,9 @@ local config = {
       -- Add paths for including more VS Code style snippets in luasnip
       paths = {},
     },
+    lua = {
+      paths = { "~/.config/nvim/lua/user/snippets/"},
+    }
   },
 
   -- CMP Source Priorities
