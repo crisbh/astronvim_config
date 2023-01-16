@@ -7,6 +7,7 @@ return {
     spell = false,          -- sets vim.opt.spell
     incsearch = true,       -- live incremental searching
     autoread = true,        -- when a file has changed on disk, just load it. Don't ask
+    autowrite= true,
 
     number = true,          -- sets vim.opt.number
     relativenumber = true,  -- Override
