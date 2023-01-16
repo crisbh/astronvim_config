@@ -7,10 +7,7 @@ return {
 
   -- Added plugins:
   ["vimwiki/vimwiki"] = {},
-  ["lervag/vimtex"] = {
-    ft = "vimtex",
-    config = function() require "user.plugins.vimtex" end,
-  },
+  ["lervag/vimtex"] = {},
 
   ["catppuccin/vim"] = {},
 

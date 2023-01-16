@@ -10,8 +10,8 @@ return {
     )
   ),
   -- \texttt
-  s({trig="([^%a])tt", dscr="Expands 'tt' into '\texttt{}'", snippetType="autosnippet"},
-  --s({trig="([^%a])tt", dscr="Expands 'tt' into '\texttt{}'"},
+  --s({trig="([^%a])tt", dscr="Expands 'tt' into '\texttt{}'", snippetType="autosnippet"},
+  s({trig="([^%a])tt", dscr="Expands 'tt' into '\texttt{}'"},
     fmta(
       "\\texttt{<>}",
       { i(1) }
