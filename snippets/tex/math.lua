@@ -291,6 +291,26 @@ return
     ),
     {condition = tex.in_mathzone}
   ),
+  -- Derivative d/dx
+  s({trig = "([^%a])ddx", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "\\frac{d<>}{dx}",
+      {
+        i(1),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- Derivative d/dt
+  s({trig = "([^%a])ddt", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "\\frac{d<>}{dt}",
+      {
+        i(1),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
   -- DERIVATIVE with numerator, denominator, and higher-order argument
   s({trig = "([^%a])ddv", wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(
@@ -323,6 +343,26 @@ return
         f( function(_, snip) return snip.captures[1] end ),
         i(1),
         i(2)
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- Derivative d/dx
+  s({trig = "([^%a])pdx", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "\\frac{\\partial d<>}{\\partial x}",
+      {
+        i(1),
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- Derivative d/dt
+  s({trig = "([^%a])pdt", wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "\\frac{\\partial d<>}{\\partial t}",
+      {
+        i(1),
       }
     ),
     {condition = tex.in_mathzone}
