@@ -112,13 +112,46 @@ return
     ),
     {condition = tex.in_mathzone}
   ),
-  -- J SUBSCRIPT SHORTCUT (since jk triggers snippet jump forward)
+  -- i SUBSCRIPT SHORTCUT (since jk triggers snippet jump forward)
+  s({trig = '([%a%)%]%}])II', wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        t("i")
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- j SUBSCRIPT SHORTCUT (since jk triggers snippet jump forward)
   s({trig = '([%a%)%]%}])JJ', wordTrig = false, regTrig = true, snippetType="autosnippet"},
     fmta(
       "<>_{<>}",
       {
         f( function(_, snip) return snip.captures[1] end ),
         t("j")
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- ij SUBSCRIPT SHORTCUT (since jk triggers snippet jump forward)
+  s({trig = '([%a%)%]%}])IJ', wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        t("ij")
+      }
+    ),
+    {condition = tex.in_mathzone}
+  ),
+  -- ji SUBSCRIPT SHORTCUT (since jk triggers snippet jump forward)
+  s({trig = '([%a%)%]%}])JI', wordTrig = false, regTrig = true, snippetType="autosnippet"},
+    fmta(
+      "<>_{<>}",
+      {
+        f( function(_, snip) return snip.captures[1] end ),
+        t("ji")
       }
     ),
     {condition = tex.in_mathzone}
