@@ -43,14 +43,14 @@ smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '
 -- Bash scripts
 vim.api.nvim_create_autocmd("BufNewFile", {
   pattern = "*.sh",
-  group = vim.api.nvim_create_augroup("create_skeletons", { clear = true }),
+  group = vim.api.nvim_create_augroup("create_skeletons_sh", { clear = true }),
   command = "0r ~/.skeletons/skeleton.sh"
 })
 
 -- Beamer presentations
 vim.api.nvim_create_autocmd("BufNewFile", {
   pattern = "*beamer.tex",
-  group = vim.api.nvim_create_augroup("create_skeletons", { clear = true }),
+  group = vim.api.nvim_create_augroup("create_skeletons_beamer", { clear = true }),
   command = "0r ~/.skeletons/skeleton-beamer.tex"
 })
 
