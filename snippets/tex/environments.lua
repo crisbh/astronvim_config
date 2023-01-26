@@ -106,5 +106,34 @@ return{
       ),
       { condition = line_begin }
     ),
+-- FRAME (BEAMER)
+    s({trig="nf", snippetType="autosnippet"},
+      fmta(
+        [[
+        \begin{frame}
+            <>
+        \end{frame}
+        
+        ]],
+        {
+          i(1),
+        }
+      ),
+      { condition = line_begin }
+    ),-- ITEMIZE
+    s({trig="itt", snippetType="autosnippet"},
+      fmta(
+        [[
+        \begin{itemize}
+            \item <>
+        \end{itemize}
+
+        ]],
+        {
+          i(0),
+        }
+      ),
+      {condition = line_begin}
+    ),
 
 }
