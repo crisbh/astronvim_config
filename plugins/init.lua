@@ -3,8 +3,8 @@ return {
   ["goolord/alpha-nvim"] = { disable = false },
   ["onsails/lspkind.nvim"] = { disable = true },
   ["Darazaki/indent-o-matic"] = { disable = true },       -- Random annoying popup errors
-  ["rafamadriz/friendly-snippets"] = { disable = true }, -- LuaSnips wants this
-  ["L3MON4D3/LuaSnip"] = { wants = false },
+  ["rafamadriz/friendly-snippets"] = { disable = false }, -- LuaSnips wants this
+--  ["L3MON4D3/LuaSnip"] = { wants = false },             -- If disabling friendly-snippets
 
   -- Added plugins:
   ["vimwiki/vimwiki"] = {},
