@@ -1,5 +1,4 @@
 return {
-  {
     "vimwiki/vimwiki",
     vimwiki_list = {
       {
@@ -9,5 +8,5 @@ return {
       }
     },
     vimwiki_global_ext = 0,      -- Disable vimwiki filetype for regular markdown files
-  }
+    lazy = false,
 }
