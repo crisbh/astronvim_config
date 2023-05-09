@@ -15,5 +15,5 @@ My personal settings for [AstroNvim](https://github.com/AstroNvim/AstroNvim.git)
 This repo should be cloned under `/lua/user`, i.e. as
 
 ```shell
-git clone https://github.com/crisbh/astronvim_config.git ~/.config/nvim/lua/user
+git clone git@github.com:crisbh/astronvim_config.git ~/.config/nvim/lua/user
 ```
