@@ -1,17 +1,27 @@
-return function(config)
-  config[1] = {
-    hl = { fg = "fg", bg = "bg" },
-    astronvim.status.component.git_branch(),
-    astronvim.status.component.file_info(),
-    astronvim.status.component.git_diff(),
-    astronvim.status.component.diagnostics(),
-    astronvim.status.component.fill(),
-    astronvim.status.component.cmd_info(),
-    astronvim.status.component.fill(),
-    astronvim.status.component.lsp(),
-    astronvim.status.component.treesitter(),
-    { provider = " %4l/%L:%-3c %3p%%" },
-    astronvim.status.component.mode { surround = { separator = "right" } },
-  }
-  return config
-end
+return {
+  "rebelot/heirline.nvim",
+  opts = function(_, opts)
+    local status = require "astronvim.utils.status"
+    opts.statusline[3] = status.component.file_info { filetype = {}, filename = false }
+
+    opts.winbar[1][1] = status.component.separated_path { path_func = status.provider.filename { modify = ":.:h" } }
+    opts.winbar[2] = {
+      status.component.separated_path { path_func = status.provider.filename { modify = ":.:h" } },
+      status.component.file_info { -- add file_info to breadcrumbs
+        file_icon = { hl = status.hl.filetype_color, padding = { left = 0 } },
+        file_modified = false,
+        file_read_only = false,
+        hl = status.hl.get_attributes("winbar", true),
+        surround = false,
+        update = "BufEnter",
+      },
+      status.component.breadcrumbs {
+        icon = { hl = true },
+        hl = status.hl.get_attributes("winbar", true),
+        prefix = true,
+        padding = { left = 0 },
+      },
+    }
+    return opts
+  end,
+}
