@@ -1,6 +1,7 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
+  flavour = "mocha", -- latte, frappe, macchiato, mocha
   opts = {
     dim_inactive = { enabled = true, percentage = 0.25 },
     integrations = {
@@ -22,4 +23,3 @@ return {
     },
   },
 }
-
