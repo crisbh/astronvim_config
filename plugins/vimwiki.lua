@@ -1,12 +1,29 @@
 return {
+  {
     "vimwiki/vimwiki",
-    vimwiki_list = {
-      {
-      path = '~/Dropbox/vimwiki',
-      syntax = 'markdown',
-      ext = '.md',
+    lazy = false, -- Always load vimwiki
+    event = "BufEnter *.md",
+    keys = { "<leader>ww" },
+    init = function()
+      vim.g.vimwiki_list = {
+        {
+          path = "~/Dropbox/vimwiki",
+          syntax = "markdown",
+          ext = ".md",
+        },
       }
-    },
-    vimwiki_global_ext = 0,      -- Disable vimwiki filetype for regular markdown files
-    lazy = false,
+      vim.g.vimwiki_ext2syntax = {
+        [".md"] = "markdown",
+        [".markdown"] = "markdown",
+        [".mdown"] = "markdown",
+      }
+      --      vim.g.vimwiki_folding = ""
+      vim.g.vimwiki_global_ext = 0
+      vim.g.vimtex_fold_enabled = true
+      vim.g.tex_flavor = "latex"
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_quickfix_mode = 0
+      vim.g.tex_conceal = "abdgms"
+    end,
+  },
 }
