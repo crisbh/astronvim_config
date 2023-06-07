@@ -1,7 +1,7 @@
 return {
   {
     "jupyter-vim/jupyter-vim",
-    ft = { "python", "julia" },
+--    ft = { "python", "julia" },
     config = function()
       require("astronvim.utils").set_mappings {
         n = {
