@@ -38,7 +38,7 @@ return {
       {condition = tex.in_text}
     ),
     -- ITALIC i.e. \textit
-    s({trig = "([^%a])ti", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    s({trig = "([^%a])tii", regTrig = true, wordTrig = false, snippetType="autosnippet"},
       fmta(
         "<>\\textit{<>}",
         {
