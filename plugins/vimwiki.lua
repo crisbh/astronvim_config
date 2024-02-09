@@ -1,8 +1,9 @@
 return {
   {
     "vimwiki/vimwiki",
-    lazy = false, -- Always load vimwiki
-    event = "BufEnter *.md",
+    enable = false,
+    lazy = true, -- Use false to Always load vimwiki during startup
+    -- event = "BufEnter *.md",
     keys = { "<leader>ww" },
     init = function()
       vim.g.vimwiki_list = {
