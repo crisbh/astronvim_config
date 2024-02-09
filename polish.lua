@@ -27,6 +27,7 @@
 -- vim.g.vimtex_quickfix_mode=0
 -- vim.g.tex_conceal='abdgms'
 
+vim.opt_local.conceallevel = 2
 ------------------------------------
 -- LuaSnip
 ------------------------------------
@@ -62,5 +63,15 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 
 
------------------------------
+-- vim.lsp.on_attach_callback = function(_, bufnr)
+--  local function buf_set_option(...)
+--    vim.api.nvim_buf_set_option(bufnr, ...)
+--  end
+--
+--  -- use gq for formatting
+--  buf_set_option("formatexpr", "v:lua.vim.lsp.formatexpr(#{timeout_ms:250})")
+--end
 
+-- vim.keymap.set("v", "<leader>lF", vim.lsp.buf.format, { remap = false })
+
+-----------------------------

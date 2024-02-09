@@ -16,6 +16,8 @@ return {
     ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
     ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
     ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+    -- Create Obsidian Daily Note
+    ["<leader>wi"] = { "<cmd>ObsidianToday<cr>", desc = "New tab" },
   },
   v = {
     ["<leader>y"] = { '"*y', desc = "Yank to clipboard" },
