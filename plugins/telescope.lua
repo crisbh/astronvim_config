@@ -59,7 +59,8 @@ return {
       },
       pickers = {
         find_files = {
-          hidden = true,
+          -- hidden = true,
+          find_command = { "rg", "--files", "--glob", "!**/.git/*", "-L" },
         },
         buffers = {
           path_display = { "smart" },
