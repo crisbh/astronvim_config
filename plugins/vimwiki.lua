@@ -2,13 +2,14 @@ return {
   {
     "vimwiki/vimwiki",
     enable = true,
-    lazy = true, -- Use false to Always load vimwiki during startup
+    lazy = false, -- Use false to Always load vimwiki during startup
     -- event = "BufEnter *.md",
     keys = { "<leader>ww" },
     init = function()
       vim.g.vimwiki_list = {
         {
-          path = "~/Dropbox/vimwiki",
+          path = "$VAULT",
+          diary_rel_path = "notes/diary",
           syntax = "markdown",
           ext = ".md",
         },
