@@ -13,6 +13,7 @@ return {
     relativenumber = true,  -- Override
     linebreak = true,       -- Break at "natural" spot on wrap
     textwidth = 80,         -- Split line after this size
+    scrolloff = 6,          -- Keep cursor away from top and bottom
     wrapmargin= 2,
     wrap = false,           -- Wrap lines
 
