@@ -25,10 +25,10 @@ return {
         name = "vimwiki",
         path = "$VAULT",
       },
-      {
-        name = "personal",
-        path = "~/vaults/personal",
-      },
+      --{
+      --  name = "personal",
+      --  path = "~/vaults/personal",
+      --},
     },
 
     -- Alternatively - and for backwards compatibility - you can set 'dir' to a single path instead of
